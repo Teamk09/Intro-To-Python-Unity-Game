@@ -6,7 +6,7 @@ We plan to use Unity to create a top-down 2D adventure game inspired by Gameboy 
 
 ## If you plan to collaborate with one or two classmates, what are their names?
 
-Ben Levit and Chun Ting Wu
+N/A
 
 ## Do you have any questions of your own?
 
