@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    public float speed = 5f; // Movement speed (duh)
+    public float speed = 5f; // Movement speed 
 
     private Rigidbody2D rb2d;
     private Vector2 movement;
     public Animator animator;
+
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
+
         // Get horizontal and vertical input
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
@@ -46,4 +48,6 @@ public class MovementScript : MonoBehaviour
         // Move the player using the Rigidbody2D component
         rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
     }
+
+
 }
