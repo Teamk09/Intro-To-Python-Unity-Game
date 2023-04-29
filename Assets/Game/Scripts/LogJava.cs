@@ -7,6 +7,7 @@ public class LogJava : MonoBehaviour, Interactable
 {
     public DialogueBox sign;
 
+
     public void Interact()
     {
         Debug.Log("Java Clicked");
@@ -16,7 +17,9 @@ public class LogJava : MonoBehaviour, Interactable
     IEnumerator PickJava()
     {
         sign.ShowBox(true);
-        sign.DisplayText(true, "YOU HAVE SELECTED JAVA");
+        sign.DisplayText(true, "YOU HAVE SELECTED JAVA. HE'S VERY ENERGETIC");
+        PlayerPrefs.SetInt("Choice", 2);
+
 
         yield return new WaitForSeconds(3f);
 

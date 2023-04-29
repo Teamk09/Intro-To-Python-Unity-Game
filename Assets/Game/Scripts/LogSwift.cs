@@ -7,6 +7,7 @@ public class LogSwift : MonoBehaviour, Interactable
 {
     public DialogueBox sign;
 
+
     public void Interact()
     {
         Debug.Log("Swift Clicked");
@@ -16,7 +17,9 @@ public class LogSwift : MonoBehaviour, Interactable
     IEnumerator PickSwift()
     {
         sign.ShowBox(true);
-        sign.DisplayText(true, "YOU HAVE SELECTED SWIFT");
+        sign.DisplayText(true, "YOU HAVE SELECTED SWIFT. HE'S POOR FROM BUYING APPLE PRODUCTS");
+        PlayerPrefs.SetInt("Choice", 3);
+
 
         yield return new WaitForSeconds(3f);
 

@@ -7,6 +7,7 @@ public class LogPython : MonoBehaviour, Interactable
 {
     public DialogueBox sign;
 
+
     public void Interact()
     {
         Debug.Log("Python Clicked");
@@ -16,7 +17,9 @@ public class LogPython : MonoBehaviour, Interactable
     IEnumerator PickPython()
     {
         sign.ShowBox(true);
-        sign.DisplayText(true, "YOU HAVE SELECTED PYTHON");
+        sign.DisplayText(true, "YOU HAVE SELECTED PYTHON. HE HAS SOME SERIOUS PYTHONS!");
+        PlayerPrefs.SetInt("Choice", 1);
+
 
         yield return new WaitForSeconds(3f);
 

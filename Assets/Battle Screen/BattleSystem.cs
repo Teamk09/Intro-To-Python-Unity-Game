@@ -8,8 +8,11 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 public class BattleSystem : MonoBehaviour
 {
 
-    public GameObject PlayerPrefab;
-    public GameObject EnemyPrefab;
+    public GameObject Java;
+    public GameObject Python;
+    public GameObject Swift;
+
+    public GameObject EnemyJava;
 
     public Transform PlayerBattleStation;
     public Transform EnemyBattleStation;
@@ -33,11 +36,28 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        GameObject playerPokemon = Instantiate(PlayerPrefab, PlayerBattleStation);
-        playerUnit = playerPokemon.GetComponent<Unit>();
+        if (PlayerPrefs.GetInt("Choice") == 1)
+        {
+            GameObject python = Instantiate(Python, PlayerBattleStation);
+            playerUnit = python.GetComponent<Unit>();
+        }
+        else if (PlayerPrefs.GetInt("Choice") == 2)
+        {
+            GameObject java = Instantiate(Java, PlayerBattleStation);
+            playerUnit = java.GetComponent<Unit>();
+        }
+        else
+        {
+            
+            GameObject swift = Instantiate(Swift, PlayerBattleStation);
+            playerUnit = swift.GetComponent<Unit>();
+            
+        }
 
-        GameObject enemyPokemon = Instantiate(EnemyPrefab, EnemyBattleStation);
-        enemyUnit = enemyPokemon.GetComponent<Unit>();
+
+
+        GameObject enemyJava = Instantiate(EnemyJava, EnemyBattleStation);
+        enemyUnit = enemyJava.GetComponent<Unit>();
 
         dialogueText.text = $"A CORRUPTED {enemyUnit.unitName} DOWNLOADS...".ToUpper();
 
@@ -53,7 +73,10 @@ public class BattleSystem : MonoBehaviour
     void EndBattle()
     {
         if (state == BattleState.WON)
+        {
             dialogueText.text = $"THE {enemyUnit.unitName} UNINSTALLS...".ToUpper();
+            StartCoroutine(BeatRosen());
+        } 
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "YOU'VE BEEN INFECTED...";
@@ -63,6 +86,19 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "SUCCESS!";
         }
 
+        StartCoroutine(ChangeScene());
+    }
+
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    IEnumerator BeatRosen()
+    {  
+        dialogueText.text = "WOW CAMERON YOU'RE SO GOOD AT PROGRAMMING AND PUT SO MUCH EFFORT INTO THIS PROJECT. HERE'S A \"SKIP THE FINAL\" PASS FOR BEATING ME...";
+        yield return new WaitForSeconds(20f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
