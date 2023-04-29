@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Stinkapotomus
-  unitLevel: 5
+  unitLevel: 0
   damage: 15
   maxHP: 40
-  currentHP: 20
+  currentHP: 40

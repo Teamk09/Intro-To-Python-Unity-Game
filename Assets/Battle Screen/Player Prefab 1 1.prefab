@@ -131,6 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Cleanopotomus
   unitLevel: 10
-  damage: 30
+  damage: 5
   maxHP: 80
   currentHP: 80
