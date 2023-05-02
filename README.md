@@ -1,4 +1,7 @@
 # Intro-To-Python-Unity-Game
+
+###TO PLAY THE GAME GO TO THE REALESES TAB AND DOWNLOAD THE INTRO_TO_PYTHONMON ZIP FILE###
+
 Attempt at making a 2D top-down adventure game inspired by pokemon
 
 I worked on this project over the course of about two months or so all things considered
