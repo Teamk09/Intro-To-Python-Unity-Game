@@ -29,3 +29,6 @@ I hope you enjoy the game.
 
 2 Minute Video:
 https://youtu.be/7LiRbhKdWQE
+
+Gameplay Demo:
+https://www.youtube.com/watch?v=bGysBIM5d9o
